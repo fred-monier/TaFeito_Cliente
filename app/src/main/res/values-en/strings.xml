@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">ItsDone_Client</string>
+
+    <string name="excecao_objeto_nulo">Null object received</string>
+    <string name="excecao_objeto_nao_encontrado">Object not found</string>
+    <string name="excecao_objeto_nao_excluido">Object not excluded</string>
+
+    <string name="login_senha">Password</string>
+    <string name="login_autenticar">Login</string>
+    <string name="login_autenticando">Authenticating...</string>
+    <string name="login_falhou">Login failed</string>
+    <string name="login_email_invalido">enter a valid email address</string>
+    <string name="login_senha_tamanho_invalido">between 4 and 10 alphanumeric characters</string>
+    <string name="login_registrar">No account yet? Create one</string>
+
+    <string name="registro_nome">Name</string>
+    <string name="registro_phone">Phone number</string>
+    <string name="registro_endereco">Address</string>
+    <string name="registro_criar_conta">Create Account</string>
+    <string name="registro_ja_membro">Already a member? Login</string>
+    <string name="registro_criando_conta">Creating Account...</string>
+    <string name="registro_falhou">Login failed</string>
+    <string name="registro_email_ja_existente">email already exists</string>
+    <string name="registro_email_invalido">enter a valid email address (at most 100 characters)</string>
+    <string name="registro_nome_invalido">between 3 and 200 alphanumeric characters</string>
+    <string name="registro_cpf_invalido">enter a valid CPF</string>
+    <string name="registro_cnpj_invalido">enter a valid CNPJ</string>
+    <string name="registro_phone_invalido">enter a valid phone number</string>
+    <string name="registro_endereco_invalido">at most 200 alphanumeric characters</string>
+</resources>

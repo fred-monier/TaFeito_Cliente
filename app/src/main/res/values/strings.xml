@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TaFeito_Cliente</string>
+
+    <string name="excecao_objeto_nulo">Objeto nulo recebido</string>
+    <string name="excecao_objeto_nao_encontrado">Objeto não encontrado</string>
+    <string name="excecao_objeto_nao_excluido">Objeto não excluído</string>
+
+    <string name="login_email" translatable="false">Email</string>
+    <string name="login_senha">Senha</string>
+    <string name="login_autenticar">Entrar</string>
+    <string name="login_autenticando">Autenticando...</string>
+    <string name="login_falhou">Falha na autenticação</string>
+    <string name="login_email_invalido">email inválido</string>
+    <string name="login_senha_tamanho_invalido">entre 4 e 10 caracteres alfanuméricos</string>
+    <string name="login_registrar">Ainda sem conta? Comece aqui</string>
+
+    <string name="registro_nome">Nome</string>
+    <string name="registro_cpf" translatable="false">CPF</string>
+    <string name="registro_cnpj" translatable="false">CNPJ</string>
+    <string name="registro_phone">Telefone</string>
+    <string name="registro_endereco">Endereço</string>
+    <string name="registro_criar_conta">Registrar</string>
+    <string name="registro_ja_membro">Já registrado? Entre</string>
+    <string name="registro_criando_conta">Registrando...</string>
+    <string name="registro_falhou">Falha ao registrar</string>
+    <string name="registro_email_ja_existente">email já existente</string>
+    <string name="registro_email_invalido">email inválido (no máximo 100 caracteres)</string>
+    <string name="registro_nome_invalido">entre 3 e 200 caracteres alfanuméricos</string>
+    <string name="registro_cpf_invalido">CPF inválido</string>
+    <string name="registro_cnpj_invalido">CNPJ inválido</string>
+    <string name="registro_phone_invalido">Telefone inválido</string>
+    <string name="registro_endereco_invalido">no máximo 200 caracteres alfanuméricos</string>
+</resources>
