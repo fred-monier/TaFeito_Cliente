@@ -36,7 +36,41 @@ public class TesteBDActivity extends AppCompatActivity {
         super.onResume();
 
         //teste1();
-        teste2();
+        //teste2();
+        teste3();
+    }
+
+    private void teste3() {
+
+        System.out.println("*%*%*%*%*%*%*%*%*%*%*%* ---->  INICIANDO TESTES!  ");
+
+        IFachadaTaFeito fachada = FachadaTaFeitoSQLite.getInstancia(this.getApplicationContext());
+
+        Autenticacao autenticacao = new Autenticacao();
+        autenticacao.setToken("123");
+
+        ///
+
+        //ServicoCategorias
+        System.out.println("Testando Serviços Categoria:");
+
+        try {
+
+            //listagem de todos
+            List<ServicoCategoria> listaServicoCategorias = fachada.listarServicoCategoria(autenticacao);
+            System.out.println("Listagem de todos:");
+            Iterator it = listaServicoCategorias.iterator();
+            while (it.hasNext()) {
+                ServicoCategoria obj = (ServicoCategoria) it.next();
+                System.out.println(obj.toPrint());
+                System.out.println("***");
+            }
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+
     }
 
     private void teste2() {

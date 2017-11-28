@@ -1,15 +1,18 @@
 package br.pe.recife.tafeito.util;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import br.pe.recife.tafeito.negocio.ServicoCategoria;
 
 public class SQLHelperTaFeito extends SQLiteOpenHelper {
 
     private static SQLHelperTaFeito instancia;
 
     private static final String NOME_BANCO = "DB_TAFEITO";
-    private static final int VERSAO_BANCO = '4';
+    private static final int VERSAO_BANCO = 54;
 
     public static final String TABELA_ACESSO = "ACESSO";
     public static final String TABELA_ACESSO_COLUNA_ID = "ID";
@@ -74,13 +77,12 @@ public class SQLHelperTaFeito extends SQLiteOpenHelper {
     public static final String TABELA_AGENDAMENTO_COLUNA_MINUTO_CANCELADO = "MINUTO_CANCELADO";
 
     public static SQLHelperTaFeito getInstancia(Context context) {
-        SQLHelperTaFeito res;
+
         if (instancia == null) {
-            res = new SQLHelperTaFeito(context);
-        } else {
-            res = instancia;
+            instancia = new SQLHelperTaFeito(context);
         }
-        return res;
+
+        return instancia;
     }
 
     private SQLHelperTaFeito(Context context) {
@@ -176,6 +178,9 @@ public class SQLHelperTaFeito extends SQLiteOpenHelper {
                 "CONSTRAINT IND_OFERTA_CLIENTE UNIQUE (" + TABELA_AGENDAMENTO_COLUNA_ID_OFERTA +
                 ", " + TABELA_AGENDAMENTO_COLUNA_ID_CLIENTE + "))"
         );
+
+        popularServicoCategoria(db);
+
     }
 
     @Override
@@ -189,5 +194,79 @@ public class SQLHelperTaFeito extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE " + TABELA_USUARIO);
         db.execSQL("DROP TABLE IF EXISTS " + TABELA_ACESSO);
         onCreate(db);
+    }
+
+    private void popularServicoCategoria(SQLiteDatabase db) {
+
+        //Populando ServicoCategoria
+
+        System.out.println("Populando");
+
+        ServicoCategoria servicoCat;
+        ContentValues cv;
+        long id;
+
+        servicoCat = new ServicoCategoria();
+        cv = new ContentValues();
+        servicoCat.setNome("Barbeiro");
+        servicoCat.setDescricao("Serviços com cabelo e barba humanos.");
+        cv.put(SQLHelperTaFeito.TABELA_SERVICO_CATEGORIA_COLUNA_NOME, servicoCat.getNome());
+        cv.put(SQLHelperTaFeito.TABELA_SERVICO_CATEGORIA_COLUNA_DESCRICAO, servicoCat.getDescricao());
+        id = db.insert(SQLHelperTaFeito.TABELA_SERVICO_CATEGORIA, null, cv);
+        System.out.println("Chave: " + id);
+
+        servicoCat = new ServicoCategoria();
+        cv = new ContentValues();
+        servicoCat.setNome("Cabeleireiro");
+        servicoCat.setDescricao("Serviços com cabelo, barba, unhas das mãos e pés humanos, realizando diversas alterações nos mesmos, como corte ou coloração.");
+        cv.put(SQLHelperTaFeito.TABELA_SERVICO_CATEGORIA_COLUNA_NOME, servicoCat.getNome());
+        cv.put(SQLHelperTaFeito.TABELA_SERVICO_CATEGORIA_COLUNA_DESCRICAO, servicoCat.getDescricao());
+        id = db.insert(SQLHelperTaFeito.TABELA_SERVICO_CATEGORIA, null, cv);
+        System.out.println("Chave: " + id);
+
+        servicoCat = new ServicoCategoria();
+        cv = new ContentValues();
+        servicoCat.setNome("Médico");
+        servicoCat.setDescricao("Profissional autorizado pelo Estado para exercer a Medicina. Ocupa-se da saúde humana.");
+        cv.put(SQLHelperTaFeito.TABELA_SERVICO_CATEGORIA_COLUNA_NOME, servicoCat.getNome());
+        cv.put(SQLHelperTaFeito.TABELA_SERVICO_CATEGORIA_COLUNA_DESCRICAO, servicoCat.getDescricao());
+        id = db.insert(SQLHelperTaFeito.TABELA_SERVICO_CATEGORIA, null, cv);
+        System.out.println("Chave: " + id);
+
+        servicoCat = new ServicoCategoria();
+        cv = new ContentValues();
+        servicoCat.setNome("Dentista");
+        servicoCat.setDescricao("Profissional da saúde capacitado na área de odontologia.");
+        cv.put(SQLHelperTaFeito.TABELA_SERVICO_CATEGORIA_COLUNA_NOME, servicoCat.getNome());
+        cv.put(SQLHelperTaFeito.TABELA_SERVICO_CATEGORIA_COLUNA_DESCRICAO, servicoCat.getDescricao());
+        id = db.insert(SQLHelperTaFeito.TABELA_SERVICO_CATEGORIA, null, cv);
+        System.out.println("Chave: " + id);
+
+        servicoCat = new ServicoCategoria();
+        cv = new ContentValues();
+        servicoCat.setNome("Psicólogo");
+        servicoCat.setDescricao("Compreensão de grupos e indivíduos tanto pelo estabelecimento de princípios universais como pelo estudo de casos específicos.");
+        cv.put(SQLHelperTaFeito.TABELA_SERVICO_CATEGORIA_COLUNA_NOME, servicoCat.getNome());
+        cv.put(SQLHelperTaFeito.TABELA_SERVICO_CATEGORIA_COLUNA_DESCRICAO, servicoCat.getDescricao());
+        id = db.insert(SQLHelperTaFeito.TABELA_SERVICO_CATEGORIA, null, cv);
+        System.out.println("Chave: " + id);
+
+        servicoCat = new ServicoCategoria();
+        cv = new ContentValues();
+        servicoCat.setNome("Veterinário");
+        servicoCat.setDescricao("Trabalha, num sentido amplo, com a prevenção e cura de doenças em animais.");
+        cv.put(SQLHelperTaFeito.TABELA_SERVICO_CATEGORIA_COLUNA_NOME, servicoCat.getNome());
+        cv.put(SQLHelperTaFeito.TABELA_SERVICO_CATEGORIA_COLUNA_DESCRICAO, servicoCat.getDescricao());
+        id = db.insert(SQLHelperTaFeito.TABELA_SERVICO_CATEGORIA, null, cv);
+        System.out.println("Chave: " + id);
+
+        servicoCat = new ServicoCategoria();
+        cv = new ContentValues();
+        servicoCat.setNome("Oficina Mecânica");
+        servicoCat.setDescricao("Serviços de manutenção e conserto de automóveis e motocicletas.");
+        cv.put(SQLHelperTaFeito.TABELA_SERVICO_CATEGORIA_COLUNA_NOME, servicoCat.getNome());
+        cv.put(SQLHelperTaFeito.TABELA_SERVICO_CATEGORIA_COLUNA_DESCRICAO, servicoCat.getDescricao());
+        id = db.insert(SQLHelperTaFeito.TABELA_SERVICO_CATEGORIA, null, cv);
+        System.out.println("Chave: " + id);
     }
 }
