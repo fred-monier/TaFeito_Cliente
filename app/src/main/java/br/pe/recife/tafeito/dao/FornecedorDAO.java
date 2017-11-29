@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.pe.recife.tafeito.negocio.Fornecedor;
+import br.pe.recife.tafeito.negocio.ServicoCategoria;
 import br.pe.recife.tafeito.util.SQLHelperTaFeito;
 import br.pe.recife.tafeito.util.Util;
 
@@ -156,6 +157,60 @@ public class FornecedorDAO implements IDAOson<Fornecedor> {
         sql = sql + " ORDER BY " + "5";
 
         Cursor cursor = db.rawQuery(sql, null);
+        while (cursor.moveToNext()) {
+
+            //
+            long idCol = cursor.getLong(0);
+            String cnpjCol = cursor.getString(1);
+
+            //From USUARIO
+            int habUsu = cursor.getInt(3);
+            String nomeUsu = cursor.getString(4);
+            String endUsu = cursor.getString(5);
+            String emailCol = cursor.getString(6);
+            int telCol = cursor.getInt(7);
+
+            Fornecedor fornecedor = new Fornecedor();
+            fornecedor.setId(idCol);
+            fornecedor.setHabilitado(Util.valorBooleano(habUsu));
+            fornecedor.setNome(nomeUsu);
+            fornecedor.setEndereco(endUsu);
+            fornecedor.setEmail(emailCol);
+            fornecedor.setTelefone(telCol);
+            fornecedor.setCnpj(cnpjCol);
+
+            res.add(fornecedor);
+        }
+
+        cursor.close();
+
+        return res;
+    }
+
+    public List<Fornecedor> listarPorServicoCategoria(ServicoCategoria servCat) {
+
+        List<Fornecedor> res = new ArrayList<Fornecedor>();
+
+        SQLiteDatabase db = bd.getReadableDatabase();
+
+        String sql = "SELECT * FROM " + SQLHelperTaFeito.TABELA_FORNECEDOR;
+
+        sql = sql + " INNER JOIN " + SQLHelperTaFeito.TABELA_USUARIO;
+        sql = sql + " ON " + SQLHelperTaFeito.TABELA_FORNECEDOR + "." + SQLHelperTaFeito.TABELA_FORNECEDOR_COLUNA_ID;
+        sql = sql + " = " + SQLHelperTaFeito.TABELA_USUARIO + "." + SQLHelperTaFeito.TABELA_USUARIO_COLUNA_ID;
+        sql = sql + " INNER JOIN " + SQLHelperTaFeito.TABELA_SERVICO;
+        sql = sql + " ON " + SQLHelperTaFeito.TABELA_SERVICO + "." + SQLHelperTaFeito.TABELA_SERVICO_COLUNA_ID_FORNECEDOR;
+        sql = sql + " = " + SQLHelperTaFeito.TABELA_FORNECEDOR + "." + SQLHelperTaFeito.TABELA_FORNECEDOR_COLUNA_ID;
+        sql = sql + " INNER JOIN " + SQLHelperTaFeito.TABELA_SERVICO_CATEGORIA;
+        sql = sql + " ON " + SQLHelperTaFeito.TABELA_SERVICO + "." + SQLHelperTaFeito.TABELA_SERVICO_COLUNA_ID_SERVICO_CATEGORIA;
+        sql = sql + " = " + SQLHelperTaFeito.TABELA_SERVICO_CATEGORIA + "." + SQLHelperTaFeito.TABELA_SERVICO_CATEGORIA_COLUNA_ID;
+
+        sql = sql + " WHERE " + SQLHelperTaFeito.TABELA_SERVICO_CATEGORIA + "." + SQLHelperTaFeito.TABELA_SERVICO_CATEGORIA_COLUNA_ID + " = ?";
+        String args[] = new String[]{"" + servCat.getId() + ""};
+
+        sql = sql + " ORDER BY " + "5";
+
+        Cursor cursor = db.rawQuery(sql, args);
         while (cursor.moveToNext()) {
 
             //

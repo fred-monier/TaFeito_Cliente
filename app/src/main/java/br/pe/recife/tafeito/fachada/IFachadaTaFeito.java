@@ -33,6 +33,7 @@ public interface IFachadaTaFeito {
     Fornecedor consultarFornecedor(long id, Context contexto, Autenticacao autenticacao) throws InfraException, NegocioException;
     int excluirFornecedor(Fornecedor fornecedor, Context contexto, Autenticacao autenticacao) throws InfraException, NegocioException;
     List<Fornecedor> listarFornecedor(Autenticacao autenticacao) throws InfraException;
+    List<Fornecedor> listarPorServicoCategoriaFornecedor(ServicoCategoria servicoCategoria, Autenticacao autenticacao) throws InfraException;//********
 
     //ClienteService
     void salvarCliente(Cliente cliente, Context contexto, Autenticacao autenticacao) throws InfraException, NegocioException;

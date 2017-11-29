@@ -176,7 +176,7 @@ public class ServicoCategoriaDAO implements IDAO<ServicoCategoria> {
 
         sql = sql + " ORDER BY " + "2";
 
-        Cursor cursor = db.rawQuery(sql, null);
+        Cursor cursor = db.rawQuery(sql, args);
         while (cursor.moveToNext()) {
 
             long idCol = cursor.getLong(0);

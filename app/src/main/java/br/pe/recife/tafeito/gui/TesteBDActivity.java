@@ -35,9 +35,9 @@ public class TesteBDActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        //teste1();
+        teste1();
         //teste2();
-        teste3();
+        //teste3();
     }
 
     private void teste3() {
@@ -393,8 +393,8 @@ public class TesteBDActivity extends AppCompatActivity {
             System.out.println("***");
 
             //1 alteração
-            servico1.setFornecedor(fornecedor3);
-            servico1.setServicoCategoria(servicoCategoria3);
+            servico2.setFornecedor(fornecedor3);
+            servico2.setServicoCategoria(servicoCategoria3);
             servico2.setNome("Servico22");
             servico2.setDescricao("Descricao 22");
 
@@ -577,17 +577,29 @@ public class TesteBDActivity extends AppCompatActivity {
             System.out.println(e.getMessage());
         }
 
-        //4 métodos restantes ainda não testados
-        System.out.println("Testando as 4 listagens que ainda faltam:");
+        //5 métodos restantes ainda não testados
+        System.out.println("Testando as 5 listagens que ainda faltam:");
 
         try {
+
+            //Fornecedor por ServicoCategoria
+            List<Fornecedor> lista0 = fachada.listarPorServicoCategoriaFornecedor(servicoCategoria3, autenticacao);
+            System.out.println("Listagem de Fornecedor por ServicoCategoria:");
+            System.out.println(servicoCategoria3.toPrint());
+            System.out.println("***");
+            Iterator it = lista0.iterator();
+            while (it.hasNext()) {
+                Fornecedor obj = (Fornecedor) it.next();
+                System.out.println(obj.toPrint());
+                System.out.println("***");
+            }
 
             //ServicoCategoria por Fornecedor
             List<ServicoCategoria> lista1 = fachada.listarPorFornecedorServicoCategoria(fornecedor3, autenticacao);
             System.out.println("Listagem de ServicoCategoria por Fornecedor:");
             System.out.println(fornecedor3.toPrint());
             System.out.println("***");
-            Iterator it = lista1.iterator();
+            it = lista1.iterator();
             while (it.hasNext()) {
                 ServicoCategoria obj = (ServicoCategoria) it.next();
                 System.out.println(obj.toPrint());

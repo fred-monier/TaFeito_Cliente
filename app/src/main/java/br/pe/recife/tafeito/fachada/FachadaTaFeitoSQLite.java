@@ -161,6 +161,12 @@ public class FachadaTaFeitoSQLite implements IFachadaTaFeito {
     }
 
     @Override
+    public List<Fornecedor> listarPorServicoCategoriaFornecedor(ServicoCategoria servicoCategoria, Autenticacao autenticacao) throws InfraException {
+
+        return this.fornecedorService.listarPorServicoCategoria(servicoCategoria);
+    }
+
+    @Override
     public void salvarOferta(Oferta oferta, Context contexto, Autenticacao autenticacao) throws InfraException, NegocioException {
 
         this.ofertaService.salvar(oferta, contexto);
