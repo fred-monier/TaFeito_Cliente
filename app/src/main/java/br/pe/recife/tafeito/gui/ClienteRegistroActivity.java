@@ -19,21 +19,27 @@ import br.pe.recife.tafeito.negocio.Cliente;
 import br.pe.recife.tafeito.negocio.Usuario;
 import br.pe.recife.tafeito.util.MaskaraCpfCnpj;
 import br.pe.recife.tafeito.util.MaskaraType;
-import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 public class ClienteRegistroActivity extends AppCompatActivity {
 
     private IFachadaTaFeito fachada;
 
-    @InjectView(R.id.input_name) EditText _nameText;
-    @InjectView(R.id.input_cpf) EditText _cpfText;
-    @InjectView(R.id.input_phone) EditText _phoneText;
-    @InjectView(R.id.input_email) EditText _emailText;
-    @InjectView(R.id.input_address) EditText _addressText;
-    @InjectView(R.id.input_password) EditText _passwordText;
-    @InjectView(R.id.btn_signup) Button _signupButton;
-    @InjectView(R.id.link_login) TextView _loginLink;
+    //@InjectView(R.id.input_name)
+    EditText _nameText;
+    //@InjectView(R.id.input_cnpj)
+    EditText _cpfText;
+    //@InjectView(R.id.input_phone)
+    EditText _phoneText;
+    //@InjectView(R.id.input_email)
+    EditText _emailText;
+    //@InjectView(R.id.input_address)
+    EditText _addressText;
+    //@InjectView(R.id.input_password)
+    EditText _passwordText;
+    //@InjectView(R.id.btn_signup)
+    Button _signupButton;
+    //@InjectView(R.id.link_login)
+    TextView _loginLink;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,7 +48,16 @@ public class ClienteRegistroActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_cliente_registro);
 
-        ButterKnife.inject(this);
+        //ButterKnife.inject(this);
+        _nameText = (EditText) findViewById(R.id.input_name);
+        _cpfText = (EditText) findViewById(R.id.input_cpf);
+        _phoneText = (EditText) findViewById(R.id.input_phone);
+        _emailText = (EditText) findViewById(R.id.input_email);
+        _addressText = (EditText) findViewById(R.id.input_address);
+        _passwordText = (EditText) findViewById(R.id.input_password);
+        _signupButton = (Button) findViewById(R.id.btn_signup);
+        _loginLink = (TextView) findViewById(R.id.link_login);
+        ///////
 
         //Mascara início
         _cpfText.addTextChangedListener(MaskaraCpfCnpj.insert(_cpfText, MaskaraType.CPF));
