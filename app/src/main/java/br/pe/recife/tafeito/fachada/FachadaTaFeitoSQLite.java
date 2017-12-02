@@ -83,6 +83,21 @@ public class FachadaTaFeitoSQLite implements IFachadaTaFeito {
     }
 
     @Override
+    public Acesso consultarAcesso(long id, Context contexto, Autenticacao autenticacao) throws InfraException, NegocioException {
+        return this.acessoService.consultar(id, contexto);
+    }
+
+    @Override
+    public int excluirAcessoCliente(Acesso acesso, Context contexto, Autenticacao autenticacao) throws InfraException, NegocioException {
+        return this.acessoService.excluirCliente(acesso, contexto);
+    }
+
+    @Override
+    public int excluirAcessoFornecedor(Acesso acesso, Context contexto, Autenticacao autenticacao) throws InfraException, NegocioException {
+        return this.acessoService.excluirFornecedor(acesso, contexto);
+    }
+
+    @Override
     public List<Acesso> listarAcesso() throws InfraException {
         return this.acessoService.listar();
     }

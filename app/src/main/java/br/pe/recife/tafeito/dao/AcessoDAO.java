@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.pe.recife.tafeito.negocio.Acesso;
+import br.pe.recife.tafeito.negocio.Cliente;
 import br.pe.recife.tafeito.util.SQLHelperTaFeito;
+import br.pe.recife.tafeito.util.Util;
 
 public class AcessoDAO {
 
@@ -137,6 +139,50 @@ public class AcessoDAO {
 
         return res;
 
+    }
+
+    public Acesso consultar(long id) {
+
+        Acesso res = null;
+
+        SQLiteDatabase db = bd.getReadableDatabase();
+
+        String sql = "SELECT * FROM " + SQLHelperTaFeito.TABELA_ACESSO;
+
+        sql = sql + " WHERE " + SQLHelperTaFeito.TABELA_ACESSO + "." + SQLHelperTaFeito.TABELA_ACESSO_COLUNA_ID + " = ?";
+        String args[] = new String[]{"" + id + ""};
+
+        Cursor cursor = db.rawQuery(sql, args);
+        if (cursor.moveToNext()) {
+
+            long idCol = cursor.getLong(0);
+            String loginCol = cursor.getString(1);
+            String senhaCol = cursor.getString(6);
+
+            Acesso acesso = new Acesso();
+            acesso.setId(idCol);
+            acesso.setLogin(loginCol);
+            acesso.setSenha(senhaCol);
+
+            res = acesso;
+        }
+
+        cursor.close();
+
+        return res;
+
+    }
+
+    public int excluir(Acesso acesso) {
+
+        SQLiteDatabase db = bd.getWritableDatabase();
+
+        int linhasExcluidas = db.delete(SQLHelperTaFeito.TABELA_ACESSO,
+                SQLHelperTaFeito.TABELA_ACESSO_COLUNA_ID + " = ?",
+                new String[]{String.valueOf(acesso.getId())});
+        db.close();
+
+        return linhasExcluidas;
     }
 
     public List<Acesso> listar() {

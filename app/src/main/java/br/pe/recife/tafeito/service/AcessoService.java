@@ -164,6 +164,81 @@ public class AcessoService {
         return res;
     }
 
+    public Acesso consultar(long id, Context contexto) throws InfraException, NegocioException {
+
+        Acesso res = null;
+
+        try {
+
+            res = acessoDao.consultar(id);
+
+            if (res == null) {
+                throw new NegocioException(contexto.getResources().getText(R.string.excecao_objeto_nao_encontrado).toString());
+            }
+        } catch (NegocioException e) {
+            throw  e;
+        } catch (Exception e) {
+            throw new InfraException(e.getMessage(), e);
+        }
+
+        return res;
+
+    }
+
+    public int excluirCliente(Acesso acesso, Context contexto) throws InfraException, NegocioException{
+
+        int res = 0;
+
+        try {
+
+            res = acessoDao.excluir(acesso);
+            if (res <= 0) {
+                throw new NegocioException(contexto.getResources().getText(R.string.excecao_objeto_nao_excluido).toString());
+            }
+
+            res = clienteService.excluir(clienteService.consultar(acesso.getId(), contexto), contexto);
+            if (res <= 0) {
+                throw new NegocioException(contexto.getResources().
+                        getText(R.string.excecao_objeto_nao_excluido).toString());
+            }
+
+        } catch (NegocioException e) {
+            throw  e;
+        } catch (Exception e) {
+            throw new InfraException(e.getMessage(), e);
+        }
+
+        return res;
+
+    }
+
+    public int excluirFornecedor(Acesso acesso, Context contexto) throws InfraException, NegocioException{
+
+        int res = 0;
+
+        try {
+
+            res = acessoDao.excluir(acesso);
+            if (res <= 0) {
+                throw new NegocioException(contexto.getResources().getText(R.string.excecao_objeto_nao_excluido).toString());
+            }
+
+            res = fornecedorService.excluir(fornecedorService.consultar(acesso.getId(), contexto), contexto);
+            if (res <= 0) {
+                throw new NegocioException(contexto.getResources().
+                        getText(R.string.excecao_objeto_nao_excluido).toString());
+            }
+
+        } catch (NegocioException e) {
+            throw  e;
+        } catch (Exception e) {
+            throw new InfraException(e.getMessage(), e);
+        }
+
+        return res;
+
+    }
+
     public List<Acesso> listar() throws InfraException {
 
         try {
