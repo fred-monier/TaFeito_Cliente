@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">TaFeito_Cliente</string>
+    <string name="app_name">TaFeito</string>
 
     <string name="excecao_objeto_nulo">Objeto nulo recebido</string>
     <string name="excecao_objeto_nao_encontrado">Objeto não encontrado</string>

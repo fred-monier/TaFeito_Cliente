@@ -9,9 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.pe.recife.tafeito.negocio.Acesso;
-import br.pe.recife.tafeito.negocio.Cliente;
 import br.pe.recife.tafeito.util.SQLHelperTaFeito;
-import br.pe.recife.tafeito.util.Util;
 
 public class AcessoDAO {
 

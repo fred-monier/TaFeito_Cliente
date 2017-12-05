@@ -12,7 +12,6 @@ import br.pe.recife.tafeito.negocio.Acesso;
 import br.pe.recife.tafeito.negocio.Autenticacao;
 import br.pe.recife.tafeito.negocio.Cliente;
 import br.pe.recife.tafeito.negocio.Fornecedor;
-import br.pe.recife.tafeito.negocio.ServicoCategoria;
 import br.pe.recife.tafeito.negocio.Usuario;
 
 public class AcessoService {

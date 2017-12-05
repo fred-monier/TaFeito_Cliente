@@ -12,14 +12,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+
         <activity
-            android:name=".gui.ClienteLoginActivity"
+            android:name=".gui.SplashScreenActivity"
             android:theme="@style/AppTheme.Dark">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".gui.ClienteLoginActivity"
+            android:theme="@style/AppTheme.Dark">
+
         </activity>
         <activity
             android:name=".gui.ClienteRegistroActivity"
@@ -34,7 +41,7 @@
         </activity>
         <activity
             android:name=".gui.ClienteRegistroRESTActivity"
-            android:theme="@style/AppTheme.Dark"/>
+            android:theme="@style/AppTheme.Dark" />
         <activity
             android:name=".gui.ClienteLoginRESTActivity"
             android:theme="@style/AppTheme.Dark">

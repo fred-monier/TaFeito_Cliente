@@ -5,11 +5,9 @@ import android.content.Context;
 import java.util.List;
 
 import br.pe.recife.tafeito.R;
-
 import br.pe.recife.tafeito.dao.FornecedorDAO;
 import br.pe.recife.tafeito.excecao.InfraException;
 import br.pe.recife.tafeito.excecao.NegocioException;
-
 import br.pe.recife.tafeito.negocio.Fornecedor;
 import br.pe.recife.tafeito.negocio.ServicoCategoria;
 
