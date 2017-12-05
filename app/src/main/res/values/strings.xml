@@ -35,4 +35,5 @@
     <string name="ofertas">Ofertas</string>
     <string name="agendamentos">Agendamentos</string>
     <string name="sair">Sair</string>
+    <string name="cliente">Cliente</string>
 </resources>

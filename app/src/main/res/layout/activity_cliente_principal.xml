@@ -1,5 +1,4 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,10 +12,10 @@
         android:gravity="center_horizontal">
 
         <TextView
-            android:id="@+id/tvClient"
+            android:id="@+id/tvClientDashboard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nome do Cliente"
+            android:text="@string/cliente"
             android:textSize="40sp" />
     </LinearLayout>
 
@@ -38,11 +37,13 @@
                 android:gravity="center_vertical">
 
                 <View
+                    android:id="@+id/vConfig"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:background="@drawable/rounded_buttons" />
 
                 <View
+                    android:id="@+id/vSchedule"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:layout_marginLeft="0dp"
@@ -64,12 +65,14 @@
                 android:layout_marginTop="10dp">
 
                 <View
+                    android:id="@+id/vOffer"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:layout_marginTop="180dp"
                     android:background="@drawable/rounded_buttons" />
 
                 <View
+                    android:id="@+id/vQuit"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:layout_marginLeft="20dp"
@@ -81,7 +84,6 @@
         </FrameLayout>
 
         <LinearLayout
-            android:id="@+id/revenue_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -100,7 +102,7 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/tvOffert"
+                android:id="@+id/tvOffer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="0dp"
@@ -119,7 +121,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/imgSettings"
+                android:id="@+id/imgvSettings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="50dp"
@@ -130,7 +132,7 @@
                 android:src="@drawable/ic_settings_applications_white_48dp" />
 
             <ImageView
-                android:id="@+id/imgSchedule"
+                android:id="@+id/imgvOffer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="50dp"
@@ -138,7 +140,7 @@
                 android:layout_marginRight="0dp"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="90dp"
-                android:src="@drawable/ic_date_range_white_48dp" />
+                android:src="@drawable/ic_favorite_white_48dp" />
 
 
         </LinearLayout>
@@ -152,7 +154,7 @@
 
 
             <ImageView
-                android:id="@+id/imgOffert"
+                android:id="@+id/imgvSchedule"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="50dp"
@@ -160,11 +162,11 @@
                 android:layout_marginRight="0dp"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="50dp"
-                android:src="@drawable/ic_favorite_white_48dp" />
+                android:src="@drawable/ic_date_range_white_48dp" />
 
 
             <ImageView
-                android:id="@+id/imgExit"
+                android:id="@+id/imgvExit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="50dp"
@@ -181,7 +183,6 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/revenue_layout"
             android:layout_marginLeft="185dp"
             android:layout_marginStart="175dp"
             android:orientation="vertical">
