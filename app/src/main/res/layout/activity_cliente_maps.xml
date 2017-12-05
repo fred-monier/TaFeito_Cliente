@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:background="#CC1D1D"
+
+    tools:context="br.pe.recife.tafeito.gui.ClienteMapsActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/selecione_categoria"
+            android:id="@+id/txt_teste"
+            android:textSize="15sp"
+            android:layout_weight="0"
+            android:layout_gravity="center"
+            />
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            />
+
+
+        <ImageView android:src="@drawable/logo_tfc"
+            android:layout_width="wrap_content"
+            android:layout_height="72dp"
+            android:layout_weight="0"
+            android:layout_gravity="center"
+             />
+
+    </LinearLayout>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spn_categoria"
+        android:layout_marginLeft="0dp"
+        android:layout_marginStart="0dp"
+
+        >
+
+    </Spinner>
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="br.pe.recife.tafeito.gui.ClienteMapsActivity"
+        map:cameraZoom="4"
+        />
+
+</LinearLayout>

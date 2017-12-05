@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="array_categoria">
+        <item>@string/barbeiro</item>
+        <item>@string/cabeleireiro</item>
+        <item>@string/medico</item>
+        <item>@string/dentista</item>
+        <item>@string/psicologo</item>
+        <item>@string/veterinario</item>
+        <item>@string/oficina_mecanica</item>
+
+
+    </string-array>
+
+
+
+</resources>

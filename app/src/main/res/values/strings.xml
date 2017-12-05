@@ -31,4 +31,16 @@
     <string name="registro_cnpj_invalido">CNPJ inválido</string>
     <string name="registro_phone_invalido">Telefone inválido</string>
     <string name="registro_endereco_invalido">no máximo 200 caracteres alfanuméricos</string>
+    <string name="title_activity_cliente_maps">Map</string>
+
+    <string name="selecione_categoria">Selecione categoria:</string>
+
+    <string name="barbeiro">Barbeiro</string>
+    <string name="cabeleireiro">Cabeleireiro</string>
+    <string name="medico">Médico</string>
+    <string name="dentista">Dentista</string>
+    <string name="psicologo">Psicólogo</string>
+    <string name="veterinario">Veterinário</string>
+    <string name="oficina_mecanica">Oficina Mecânica</string>
+
 </resources>

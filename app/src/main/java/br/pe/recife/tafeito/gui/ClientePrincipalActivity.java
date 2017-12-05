@@ -1,5 +1,6 @@
 package br.pe.recife.tafeito.gui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -11,5 +12,8 @@ public class ClientePrincipalActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cliente_principal);
+
+        Intent it = new Intent(this,ClienteMapsActivity.class);
+        startActivity(it);
     }
 }
