@@ -27,4 +27,5 @@
     <string name="registro_cnpj_invalido">enter a valid CNPJ</string>
     <string name="registro_phone_invalido">enter a valid phone number</string>
     <string name="registro_endereco_invalido">at most 200 alphanumeric characters</string>
+    <string name="login_conexaoweb_inexistente">No internet connection</string>
 </resources>
