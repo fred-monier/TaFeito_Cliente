@@ -10,74 +10,124 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="10dp">
 
 
         <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
             android:id="@+id/cvPrincipal"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            card_view:cardBackgroundColor="@color/white"
+            android:layout_width="366dp"
+            android:layout_height="275dp"
             card_view:cardCornerRadius="0dp"
-            card_view:cardElevation="20dp">
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="0dp"
-                android:layout_marginRight="0dp"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="20dp"
-                android:text="@string/app_name"
-                android:textColor="@color/primary_dark"
-                android:textSize="30dp" />
-        </android.support.v7.widget.CardView>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-
-        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/cvFoto"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            card_view:cardBackgroundColor="@color/white"
-            card_view:cardCornerRadius="50dp"
-            card_view:cardElevation="0dp">
+            card_view:cardElevation="50dp">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:adjustViewBounds="false"
-                android:cropToPadding="false"
-                android:src="@mipmap/ic_mb" />
+                android:src="@drawable/xablau" />
 
         </android.support.v7.widget.CardView>
 
     </LinearLayout>
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="285dp">
 
-        <TextView
-            android:id="@+id/tvClientDashboard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/cliente"
-            android:textSize="40sp" />
+        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cvDetalhes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            card_view:cardBackgroundColor="@color/primary"
+            card_view:cardCornerRadius="0dp"
+            card_view:cardElevation="50dp">
 
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:padding="10dp"
+                android:src="@drawable/ic_account_white_48dp" />
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/tvName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="0dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:padding="10dp"
+                android:src="@drawable/ic_file_document_white_48dp" />
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/tvCpf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="50dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="110dp"
+                android:padding="10dp"
+                android:src="@drawable/ic_phone_white_36dp" />
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/tvTelephone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="100dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="155dp"
+                android:padding="10dp"
+                android:src="@drawable/ic_email_white_48dp" />
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/tvEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="155dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="210dp"
+                android:padding="10dp"
+                android:src="@drawable/ic_account_location_white_48dp" />
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/tvAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="200dp" />
+        </android.support.v7.widget.CardView>
 
     </LinearLayout>
 

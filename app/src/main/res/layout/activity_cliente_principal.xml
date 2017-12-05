@@ -40,6 +40,7 @@
                     android:id="@+id/vConfig"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
+                    android:onClick="irConfig"
                     android:background="@drawable/rounded_buttons" />
 
                 <View
@@ -67,6 +68,7 @@
                 <View
                     android:id="@+id/vOffer"
                     android:layout_width="150dp"
+                    android:onClick="irOffer"
                     android:layout_height="150dp"
                     android:layout_marginTop="180dp"
                     android:background="@drawable/rounded_buttons" />
@@ -78,6 +80,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="180dp"
+                    android:onClick="irLogin"
                     android:background="@drawable/rounded_buttons" />
             </LinearLayout>
 
@@ -197,6 +200,7 @@
                 android:layout_marginRight="0dp"
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="100dp"
+                android:onClick="irSchedule"
                 android:text="@string/agendamentos"
                 android:textColor="@android:color/white"
                 android:textSize="20sp" />

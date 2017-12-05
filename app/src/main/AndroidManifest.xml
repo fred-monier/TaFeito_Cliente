@@ -31,7 +31,7 @@
         </activity>
         <activity android:name=".gui.SettingsClientActivity" />
         <activity android:name=".gui.ScheduleClientActivity" />
-        <activity android:name=".gui.OfferClientActivity"></activity>
+        <activity android:name=".gui.OfferClientActivity" />
     </application>
 
 </manifest>
