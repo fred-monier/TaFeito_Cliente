@@ -31,4 +31,8 @@
     <string name="registro_cnpj_invalido">CNPJ inválido</string>
     <string name="registro_phone_invalido">Telefone inválido</string>
     <string name="registro_endereco_invalido">no máximo 200 caracteres alfanuméricos</string>
+    <string name="configura_es">Configurações</string>
+    <string name="ofertas">Ofertas</string>
+    <string name="agendamentos">Agendamentos</string>
+    <string name="sair">Sair</string>
 </resources>
