@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.pe.recife.tafeito">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,6 +26,18 @@
             android:theme="@style/AppTheme.Dark" />
         <activity android:name=".gui.ClientePrincipalActivity" />
         <activity android:name=".gui.TesteBDActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".gui.ClienteRegistroRESTActivity"
+            android:theme="@style/AppTheme.Dark"/>
+        <activity
+            android:name=".gui.ClienteLoginRESTActivity"
+            android:theme="@style/AppTheme.Dark">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
