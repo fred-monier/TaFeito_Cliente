@@ -1,7 +1,7 @@
 package br.pe.recife.tafeito.gui;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import br.pe.recife.tafeito.R;
 

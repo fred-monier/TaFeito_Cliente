@@ -1,9 +1,7 @@
 package br.pe.recife.tafeito.service;
 
 import android.content.Context;
-import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import br.pe.recife.tafeito.R;

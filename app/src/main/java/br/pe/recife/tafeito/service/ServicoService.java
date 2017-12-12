@@ -3,6 +3,7 @@ package br.pe.recife.tafeito.service;
 import android.content.Context;
 
 import java.util.List;
+
 import br.pe.recife.tafeito.R;
 import br.pe.recife.tafeito.dao.ServicoDAO;
 import br.pe.recife.tafeito.excecao.InfraException;

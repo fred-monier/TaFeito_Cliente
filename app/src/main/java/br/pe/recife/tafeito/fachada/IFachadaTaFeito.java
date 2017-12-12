@@ -1,8 +1,6 @@
 package br.pe.recife.tafeito.fachada;
 
 import android.content.Context;
-import android.support.annotation.BinderThread;
-import android.support.v4.media.session.PlaybackStateCompat;
 
 import java.util.List;
 

@@ -6,11 +6,9 @@ import java.util.List;
 
 import br.pe.recife.tafeito.R;
 import br.pe.recife.tafeito.dao.ClienteDAO;
-
 import br.pe.recife.tafeito.excecao.InfraException;
 import br.pe.recife.tafeito.excecao.NegocioException;
 import br.pe.recife.tafeito.negocio.Cliente;
-import br.pe.recife.tafeito.negocio.Usuario;
 
 public class ClienteService {
 

@@ -27,14 +27,4 @@
     <string name="registro_cnpj_invalido">enter a valid CNPJ</string>
     <string name="registro_phone_invalido">enter a valid phone number</string>
     <string name="registro_endereco_invalido">at most 200 alphanumeric characters</string>
-
-    <string name="selecione_categoria">Select category:</string>
-
-    <string name="barbeiro">Barber</string>
-    <string name="cabeleireiro">Hair Stylist</string>
-    <string name="medico">Doctor</string>
-    <string name="dentista">Dentist</string>
-    <string name="psicologo">Psychologist</string>
-    <string name="veterinario">Vet</string>
-    <string name="oficina_mecanica">Car Repair Shop</string>
 </resources>
