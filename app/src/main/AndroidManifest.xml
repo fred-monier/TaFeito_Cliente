@@ -32,6 +32,27 @@
         <activity android:name=".gui.SettingsClientActivity" />
         <activity android:name=".gui.ScheduleClientActivity" />
         <activity android:name=".gui.OfferClientActivity"></activity>
+
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+
+        <activity
+            android:name=".gui.ClienteMapsActivity"
+            android:label="@string/title_activity_maps">
+
+        </activity>
+
+        <uses-library android:name="com.google.android.maps" />
     </application>
+
+    <uses-permission android:name=
+        "android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name=
+        "android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
 
 </manifest>

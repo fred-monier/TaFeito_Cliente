@@ -36,4 +36,17 @@
     <string name="agendamentos">Agendamentos</string>
     <string name="sair">Sair</string>
     <string name="cliente">Cliente</string>
+
+    <string name="title_activity_maps">Maps</string>
+
+    <string name ="barbeiro">Barbeiro</string>
+    <string name ="cabeleireiro">cabeleireiro</string>
+    <string name ="medico">medico</string>
+    <string name ="dentista">dentista</string>
+    <string name ="psicologo">psicologo</string>
+    <string name ="veterinario">veterinario</string>
+    <string name ="oficina_mecanica">oficina_mecanica</string>
+
+    <string name = "selecione_categoria">selecione_categoria</string>
+    <string name="login_conexaoweb_inexistente">conexcao inexistente</string>>
 </resources>

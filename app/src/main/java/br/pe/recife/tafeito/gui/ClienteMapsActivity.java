@@ -46,7 +46,8 @@ public class ClienteMapsActivity extends FragmentActivity implements OnMapReadyC
     Geocoder geocoder;
     public static final String AUTENTICACAO = "AUTENTICACAO";
     private Autenticacao autenticacao;
-    private ServicoCategoria servico_categoria;
+    //private ServicoCategoria servico_categoria;
+    private List <ServicoCategoria> servico_categorias;
     private String markerConst;
     private Fornecedor fornecedor;
 
@@ -63,7 +64,8 @@ public class ClienteMapsActivity extends FragmentActivity implements OnMapReadyC
         fornecedores = new ArrayList<Fornecedor>();
         spn_categoria = (Spinner) findViewById(R.id.spn_categoria);
         autenticacao = new Autenticacao();
-        servico_categoria = new ServicoCategoria();
+        //servico_categoria = new ServicoCategoria();
+        servico_categorias = new ArrayList<ServicoCategoria>();
     }
 
 
@@ -78,12 +80,17 @@ public class ClienteMapsActivity extends FragmentActivity implements OnMapReadyC
         addresses = null;
         autenticacao.setToken(AUTENTICACAO);
 
+
+
         try {
             addresses = geocoder.getFromLocationName("Brasil", 1);
             latitude = addresses.get(0).getLatitude();
             longitude = addresses.get(0).getLongitude();
             localizacao = new LatLng(latitude, longitude);
+            servico_categorias = fachada.listarServicoCategoria(autenticacao);
         }catch (IOException e){
+
+        }catch (InfraException e){
 
         }
         mMap.moveCamera(CameraUpdateFactory.newLatLng(localizacao));
@@ -98,11 +105,11 @@ public class ClienteMapsActivity extends FragmentActivity implements OnMapReadyC
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                servico_categoria.setNome(parent.getItemAtPosition(position).toString());
 
+                    //setNome(parent.getItemAtPosition(position).toString());
                 try {
                     fornecedores = fachada.listarPorServicoCategoriaFornecedor
-                            (servico_categoria, autenticacao);
+                            (servico_categorias.get(position), autenticacao);
                 } catch (InfraException e) {
                     autenticacao = null;
                 }
@@ -152,7 +159,7 @@ public class ClienteMapsActivity extends FragmentActivity implements OnMapReadyC
 
             if (marker.getId().equals(markerConst + cont1)) {
 
-                //Toast.makeText(ClienteMapsActivity.this, fornecedores.get(cont1), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ClienteMapsActivity.this, fornecedores.get(cont1).getEndereco(), Toast.LENGTH_SHORT).show();
                 fornecedor = fornecedores.get(cont1);
             }
             cont1++;
